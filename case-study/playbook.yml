@@ -1,0 +1,100 @@
+---
+#OSPF
+- hosts: routers
+  gather_facts: no
+  connection: network_cli
+  become_method: enable
+
+  tasks:
+    - name: Configuring OSPF for R1....
+      when: ansible_host == "10.1.1.1"
+      ios_config:
+        parents: router ospf 100
+        lines:
+          - router-id 1.1.1.1
+          - network 10.1.1.0 0.0.0.3 area 0
+          - network 192.168.1.0 0.0.0.255 area 0
+          - network 172.168.1.0 0.0.0.63 area 0
+          - network 10.3.1.0 0.0.0.3 area 0
+          - passive-interface FastEthernet0/0
+          - passive-interface FastEthernet0/1
+
+    - name: Configuring OSPF for R2....
+      when: ansible_host == "10.2.1.1"
+      ios_config:
+        parents: router ospf 100
+        lines:
+         - router-id 2.2.2.2
+         - network 10.2.1.0 0.0.0.3 area 0
+         - network 10.1.1.0 0.0.0.3 area 0
+         - default-information originate
+
+    - name: Configuring OSPF for R3....
+      when: ansible_host == "10.2.1.2"
+      ios_config:
+        parents: router ospf 100
+        lines:
+          - router-id 3.3.3.3
+          - passive-interface f0/1
+          - passive-interface f1/0
+          - network 10.2.1.0 0.0.0.3 area 0
+          - network 172.168.2.0 0.0.0.63 area 0
+          - network 172.169.3.0 0.0.0.63 area 0
+          - network 10.3.1.0 0.0.0.3 area 0  
+
+#AAA         
+    - name: Configuring AAA login Authentication for console access...
+      ios_config:
+        commands:
+          - aaa new-model
+          - aaa authentication login default local
+
+    - name: Verifying the line console to implement the defined AAA authentication...
+      ios_config:
+        commands:
+          - login authentication default
+        parents: line console 0
+
+    - name: Allowing AAA login Authentication via SSH-LOGIN Local...
+      ios_config:
+        commands:
+          - aaa authentication login SSH-LOGIN local
+
+    - name: Configuring vty lines to the authentication phase...
+      ios_config:
+        commands:
+          - login authentication SSH-LOGIN
+        parents: line vty 0 4    
+
+#ACL
+    - name: Implementing Access List for Manager 
+      when: ansible_host == "172.168.1.1"
+      ios_config:
+        lines: 
+          - deny 172.169.3.0 0.0.0.63
+          - permit any
+        parents: ip access-list standard PC_MANAGER
+   
+    - name: Implementing access group on Interface F0/1
+      when: ansible_host == "172.168.1.1"
+      ios_config:
+        lines: 
+          - int f0/1
+          - ip access-group PC_MANAGER out
+
+    - name: Implementing Access List for SUPERVISOR
+      when: ansible_host == "172.168.2.1"
+      ios_config:
+        lines: 
+          - deny 172.169.3.0 0.0.0.63
+          - permit any
+        parents: ip access-list standard PC_SUPERVISOR
+   
+    - name: Implementing access group on Interface F0/1
+      when: ansible_host == "172.168.2.1"
+      ios_config:
+        lines: 
+          - int f0/1
+          - ip access-group PC_SUPERVISOR out
+
+       

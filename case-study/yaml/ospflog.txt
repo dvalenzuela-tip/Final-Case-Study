@@ -1,0 +1,296 @@
+{
+  "vrf": {
+    "default": {
+      "address_family": {
+        "ipv4": {
+          "instance": {
+            "100": {
+              "area_transit": true,
+              "areas": {
+                "0.0.0.0": {
+                  "area_id": "0.0.0.0",
+                  "area_type": "normal",
+                  "ranges": {},
+                  "statistics": {
+                    "area_scope_lsa_cksum_sum": "0x01F7AD",
+                    "area_scope_lsa_count": 3,
+                    "area_scope_opaque_lsa_cksum_sum": "0x000000",
+                    "area_scope_opaque_lsa_count": 0,
+                    "dcbitless_lsa_count": 0,
+                    "donotage_lsa_count": 0,
+                    "flood_list_length": 0,
+                    "indication_lsa_count": 0,
+                    "interfaces_count": 4,
+                    "spf_last_executed": "18:00:49.296",
+                    "spf_runs_count": 2
+                  }
+                }
+              },
+              "bfd": {
+                "enable": false
+              },
+              "elapsed_time": "18:01:05.684",
+              "enable": true,
+              "external_flood_list_length": 0,
+              "graceful_restart": {
+                "cisco": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "cisco"
+                },
+                "ietf": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "ietf"
+                }
+              },
+              "interface_flood_pacing_timer": 33,
+              "lls": true,
+              "lsa_group_pacing_timer": 240,
+              "nsr": {
+                "enable": false
+              },
+              "numbers": {
+                "dc_bitless": 0,
+                "do_not_age": 0,
+                "external_lsa": 1,
+                "external_lsa_checksum": "0x00BB6B",
+                "opaque_as_lsa": 0,
+                "opaque_as_lsa_checksum": "0x000000"
+              },
+              "opqaue_lsa": true,
+              "retransmission_pacing_timer": 66,
+              "router_id": "1.1.1.1",
+              "spf_control": {
+                "incremental_spf": false,
+                "throttle": {
+                  "lsa": {
+                    "arrival": 1000
+                  },
+                  "spf": {
+                    "hold": 10000,
+                    "maximum": 10000,
+                    "start": 5000
+                  }
+                }
+              },
+              "start_time": "00:00:06.056",
+              "stub_router": {
+                "always": {
+                  "always": false,
+                  "external_lsa": false,
+                  "include_stub": false,
+                  "summary_lsa": false
+                }
+              },
+              "total_areas": 1,
+              "total_areas_transit_capable": 0,
+              "total_normal_areas": 1,
+              "total_nssa_areas": 0,
+              "total_stub_areas": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "vrf": {
+    "default": {
+      "address_family": {
+        "ipv4": {
+          "instance": {
+            "100": {
+              "area_transit": true,
+              "areas": {
+                "0.0.0.0": {
+                  "area_id": "0.0.0.0",
+                  "area_type": "normal",
+                  "ranges": {},
+                  "statistics": {
+                    "area_scope_lsa_cksum_sum": "0x01F7AD",
+                    "area_scope_lsa_count": 3,
+                    "area_scope_opaque_lsa_cksum_sum": "0x000000",
+                    "area_scope_opaque_lsa_count": 0,
+                    "dcbitless_lsa_count": 0,
+                    "donotage_lsa_count": 0,
+                    "flood_list_length": 0,
+                    "indication_lsa_count": 0,
+                    "interfaces_count": 2,
+                    "spf_last_executed": "18:00:51.400",
+                    "spf_runs_count": 2
+                  }
+                }
+              },
+              "bfd": {
+                "enable": false
+              },
+              "elapsed_time": "18:01:07.696",
+              "enable": true,
+              "external_flood_list_length": 0,
+              "flags": {
+                "asbr": true
+              },
+              "graceful_restart": {
+                "cisco": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "cisco"
+                },
+                "ietf": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "ietf"
+                }
+              },
+              "interface_flood_pacing_timer": 33,
+              "lls": true,
+              "lsa_group_pacing_timer": 240,
+              "nsr": {
+                "enable": false
+              },
+              "numbers": {
+                "dc_bitless": 0,
+                "do_not_age": 0,
+                "external_lsa": 1,
+                "external_lsa_checksum": "0x00BB6B",
+                "opaque_as_lsa": 0,
+                "opaque_as_lsa_checksum": "0x000000"
+              },
+              "opqaue_lsa": true,
+              "redistribution": {},
+              "retransmission_pacing_timer": 66,
+              "router_id": "2.2.2.2",
+              "spf_control": {
+                "incremental_spf": false,
+                "throttle": {
+                  "lsa": {
+                    "arrival": 1000
+                  },
+                  "spf": {
+                    "hold": 10000,
+                    "maximum": 10000,
+                    "start": 5000
+                  }
+                }
+              },
+              "start_time": "00:00:06.180",
+              "stub_router": {
+                "always": {
+                  "always": false,
+                  "external_lsa": false,
+                  "include_stub": false,
+                  "summary_lsa": false
+                }
+              },
+              "total_areas": 1,
+              "total_areas_transit_capable": 0,
+              "total_normal_areas": 1,
+              "total_nssa_areas": 0,
+              "total_stub_areas": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
+{
+  "vrf": {
+    "default": {
+      "address_family": {
+        "ipv4": {
+          "instance": {
+            "100": {
+              "area_transit": true,
+              "areas": {
+                "0.0.0.0": {
+                  "area_id": "0.0.0.0",
+                  "area_type": "normal",
+                  "ranges": {},
+                  "statistics": {
+                    "area_scope_lsa_cksum_sum": "0x01F7AD",
+                    "area_scope_lsa_count": 3,
+                    "area_scope_opaque_lsa_cksum_sum": "0x000000",
+                    "area_scope_opaque_lsa_count": 0,
+                    "dcbitless_lsa_count": 0,
+                    "donotage_lsa_count": 0,
+                    "flood_list_length": 0,
+                    "indication_lsa_count": 0,
+                    "interfaces_count": 4,
+                    "spf_last_executed": "18:00:53.256",
+                    "spf_runs_count": 2
+                  }
+                }
+              },
+              "bfd": {
+                "enable": false
+              },
+              "elapsed_time": "18:01:09.664",
+              "enable": true,
+              "external_flood_list_length": 0,
+              "graceful_restart": {
+                "cisco": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "cisco"
+                },
+                "ietf": {
+                  "enable": false,
+                  "helper_enable": true,
+                  "type": "ietf"
+                }
+              },
+              "interface_flood_pacing_timer": 33,
+              "lls": true,
+              "lsa_group_pacing_timer": 240,
+              "nsr": {
+                "enable": false
+              },
+              "numbers": {
+                "dc_bitless": 0,
+                "do_not_age": 0,
+                "external_lsa": 1,
+                "external_lsa_checksum": "0x00BB6B",
+                "opaque_as_lsa": 0,
+                "opaque_as_lsa_checksum": "0x000000"
+              },
+              "opqaue_lsa": true,
+              "retransmission_pacing_timer": 66,
+              "router_id": "3.3.3.3",
+              "spf_control": {
+                "incremental_spf": false,
+                "throttle": {
+                  "lsa": {
+                    "arrival": 1000
+                  },
+                  "spf": {
+                    "hold": 10000,
+                    "maximum": 10000,
+                    "start": 5000
+                  }
+                }
+              },
+              "start_time": "00:00:06.036",
+              "stub_router": {
+                "always": {
+                  "always": false,
+                  "external_lsa": false,
+                  "include_stub": false,
+                  "summary_lsa": false
+                }
+              },
+              "total_areas": 1,
+              "total_areas_transit_capable": 0,
+              "total_normal_areas": 1,
+              "total_nssa_areas": 0,
+              "total_stub_areas": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

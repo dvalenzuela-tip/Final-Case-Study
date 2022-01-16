@@ -1,0 +1,95 @@
+{
+  "PC_MANAGER": {
+    "aces": {
+      "10": {
+        "actions": {
+          "forwarding": "deny"
+        },
+        "matches": {
+          "l3": {
+            "ipv4": {
+              "protocol": "ipv4",
+              "source_network": {
+                "172.169.3.0 0.0.0.63": {
+                  "source_network": "172.169.3.0 0.0.0.63"
+                }
+              }
+            }
+          }
+        },
+        "name": "10",
+        "statistics": {
+          "matched_packets": 10
+        }
+      },
+      "20": {
+        "actions": {
+          "forwarding": "permit"
+        },
+        "matches": {
+          "l3": {
+            "ipv4": {
+              "protocol": "ipv4",
+              "source_network": {
+                "any": {
+                  "source_network": "any"
+                }
+              }
+            }
+          }
+        },
+        "name": "20"
+      }
+    },
+    "name": "PC_MANAGER",
+    "type": "ipv4-acl-type"
+  }
+}
+{
+  "PC_SUPERVISOR": {
+    "aces": {
+      "10": {
+        "actions": {
+          "forwarding": "deny"
+        },
+        "matches": {
+          "l3": {
+            "ipv4": {
+              "protocol": "ipv4",
+              "source_network": {
+                "172.169.3.0 0.0.0.63": {
+                  "source_network": "172.169.3.0 0.0.0.63"
+                }
+              }
+            }
+          }
+        },
+        "name": "10",
+        "statistics": {
+          "matched_packets": 10
+        }
+      },
+      "20": {
+        "actions": {
+          "forwarding": "permit"
+        },
+        "matches": {
+          "l3": {
+            "ipv4": {
+              "protocol": "ipv4",
+              "source_network": {
+                "any": {
+                  "source_network": "any"
+                }
+              }
+            }
+          }
+        },
+        "name": "20"
+      }
+    },
+    "name": "PC_SUPERVISOR",
+    "type": "ipv4-acl-type"
+  }
+}
+
